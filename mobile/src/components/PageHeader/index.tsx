@@ -1,37 +1,44 @@
-import React from 'react';
-import { View, Image, Text } from 'react-native';
+import React, { ReactNode } from 'react';
+import { View, Text, Image } from 'react-native';
 import { BorderlessButton } from 'react-native-gesture-handler';
-
-import styles from './styles';
-import backIcon from '../../assets/images/icons/back.png';
-import logoImage from '../../assets/images/logo.png';
 import { useNavigation } from '@react-navigation/native';
 
-interface PageHeaderProps{
-    title: string
+import backIcon from '../../assets/images/icons/back.png';
+import logoImg from '../../assets/images/logo.png';
+
+import styles from './styles';
+
+interface PageHeaderProps {
+  title: string;
+  headerRight?: ReactNode;
+  children?: ReactNode;
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({title}) => {
+const PageHeader: React.FC<PageHeaderProps> = ({ title, headerRight, children }: PageHeaderProps) => {
+  const { navigate } = useNavigation();
 
-    const {navigate} =  useNavigation()
+  function handleGoBack() {
+    navigate('Landing');
+  }
 
-    function handleGoBack() {
-        navigate('Landing');
-    }
+  return (
+    <View style={styles.container}>
+      <View style={styles.topBar}>
+        <BorderlessButton onPress={handleGoBack}>
+          <Image source={backIcon} resizeMode="contain" />
+        </BorderlessButton>
 
-    return(
-        <View style={styles.container}>
-            <View style={styles.topBar}>
-                <BorderlessButton onPress={handleGoBack}>
-                    <Image source={backIcon} resizeMode="contain"/>
-                </BorderlessButton>
+        <Image source={logoImg} resizeMode="contain" />
+      </View>
 
-                <Image source={logoImage} resizeMode="contain"/>
-            </View>
+      <View style={styles.header}>
+        <Text style={styles.title}>{title}</Text>
+        {headerRight}
+      </View>
 
-            <Text style={styles.title}>{title}</Text>
-        </View>
-    )
+      {children}
+    </View>
+  );
 }
 
 export default PageHeader;
