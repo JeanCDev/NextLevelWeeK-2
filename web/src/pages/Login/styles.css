@@ -1,0 +1,99 @@
+#main{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+#logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50vw;
+
+    background-image: url(../../assets/images/success-background.svg);
+    background-color: #8257e5;
+}
+
+#logo h2{
+    color: var(--color-text-in-primary);
+    align-self: start;
+
+    margin-top: 0.8rem;
+
+    font-size: 2.4rem;
+    line-height: 4.6rem;
+    font-family: Poppins;
+    font-weight: 400;
+}
+
+#login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50vw;
+}
+
+#login div{
+    width: 50%;
+
+    background: var(--color-backgroud);
+
+    max-width: 400px;
+}
+
+#login div form{
+    display: flex;
+    flex-direction: column;
+}
+
+#login div form h2{
+    color: var(--color-text-title);
+
+    font-family: Roboto, sans-serif;
+    font-size: 3.8rem;
+
+    margin-bottom: 2.6rem;
+}
+
+#login div form input{
+    height: 6.5rem;
+    padding-left: 1.6rem;
+
+    font-family: Poppins, sans-serif;
+    font-size: 1.8rem;
+
+    background-color: var(--color-input-background);
+
+    border: 1px solid var(--color-line-in-white);
+
+    border-radius: 0.8rem 0.8rem 0 0;
+}
+
+#login div form input+input{
+    border-radius: 0 0 0.8rem 0.8rem;
+}
+
+#submit-button{
+    height: 5rem;
+    
+    font-family: Poppins, sans-serif;
+    font-size: 1.8rem;
+}
+
+@media(max-width: 980px){
+    #main{
+        flex-direction: column;
+    }
+
+    #logo{
+        width: 100vw;
+        height: 50vh;
+        margin-bottom: 4rem;
+    }
+
+    #login{
+        width: 100vw;
+    }
+}
