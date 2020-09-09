@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../assets/images/logo.svg';
 import './styles.css'
+import purpleHeart from '../../assets/images/icons/purple-heart.svg';
 
 function Login() {
     return (
@@ -15,29 +16,46 @@ function Login() {
                 <div>
                     <form method="" action="">
                         <h2>Fazer Login</h2>
-                        <input 
-                            type="email" 
-                            name="email" 
-                            placeholder="Email"/>
-                        <input 
-                            type="password" 
-                            name="password" 
-                            placeholder="Senha"/>
-                        <div>
-                            <input type="checkbox" />
-                            Lembrar senha
-                        </div>
-                        <a href="#">Esqueci minha senha</a>
 
-                        <button id="submit-button" disabled>Entrar</button>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Email" />
+
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Senha" />
+
+                        <div className="password-options">
+                            <div>
+                                <input type="checkbox" id="keep-connected" />
+                                <label htmlFor="keep-connected">Lembrar-me</label>
+                            </div>
+
+                            <a href="#">Esqueci minha senha</a>
+                        </div>
+
+
+                        <button id="submit-button">Entrar</button>
                     </form>
-                    
-                    <div>
-                        OI
-                    </div>
+
+                    <footer id="create-account">
+                        <div>
+                            <p>
+                                Não tem conta?
+                            </p>
+                            <p>
+                                É de graça
+                                <img src={purpleHeart} alt="" />
+                            </p>
+                        </div>
+                        <a href="">Cadastre-se</a>
+                    </footer>
                 </div>
             </div>
         </div>
+
     )
 }
 
