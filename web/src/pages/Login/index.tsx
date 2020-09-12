@@ -2,6 +2,8 @@ import React from 'react';
 import logo from '../../assets/images/logo.svg';
 import './styles.css'
 import purpleHeart from '../../assets/images/icons/purple-heart.svg';
+import { Link } from 'react-router-dom';
+import Button from '../../Components/Button';
 
 function Login() {
     return (
@@ -14,9 +16,9 @@ function Login() {
             </div>
             <div id="login">
                 <div>
-                    <form method="" action="">
-                        <h2>Fazer Login</h2>
+                    <h2>Fazer Login</h2>
 
+                    <form method="" action="">
                         <input
                             type="email"
                             name="email"
@@ -33,11 +35,11 @@ function Login() {
                                 <label htmlFor="keep-connected">Lembrar-me</label>
                             </div>
 
-                            <a href="#">Esqueci minha senha</a>
+                            <Link to="/register">Esqueci minha senha</Link>
                         </div>
 
 
-                        <button id="submit-button">Entrar</button>
+                        <Button type="submit" innerText="Entrar"/>
                     </form>
 
                     <footer id="create-account">
@@ -50,7 +52,7 @@ function Login() {
                                 <img src={purpleHeart} alt="" />
                             </p>
                         </div>
-                        <a href="">Cadastre-se</a>
+                        <Link to="/register">Cadastre-se</Link>
                     </footer>
                 </div>
             </div>

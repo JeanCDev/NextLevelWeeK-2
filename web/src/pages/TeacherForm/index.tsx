@@ -2,10 +2,10 @@ import React, { useState, FormEvent } from 'react';
 import api from '../../services/api';
 import { useHistory } from 'react-router-dom';
 
-import PageHeader from '../../Compontents/PageHeader';
-import Input from '../../Compontents/Input';
-import Select from '../../Compontents/Select';
-import Textarea from '../../Compontents/TextArea';
+import PageHeader from '../../Components/PageHeader';
+import Input from '../../Components/Input';
+import Select from '../../Components/Select';
+import Textarea from '../../Components/TextArea';
 
 import warningIcon from '../../assets/images/icons/warning.svg';
 import './styles.css';
